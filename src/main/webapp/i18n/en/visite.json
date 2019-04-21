@@ -1,0 +1,24 @@
+{
+    "projectJHipsterApp": {
+        "visite": {
+            "home": {
+                "title": "Visites",
+                "createLabel": "Create a new Visite",
+                "createOrEditLabel": "Create or edit a Visite"
+            },
+            "created": "A new Visite is created with identifier {{ param }}",
+            "updated": "A Visite is updated with identifier {{ param }}",
+            "deleted": "A Visite is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Visite {{ id }}?"
+            },
+            "detail": {
+                "title": "Visite"
+            },
+            "dateVisite": "Date Visite",
+            "medecin": "Medecin",
+            "clinique": "Clinique",
+            "compteRendu": "Compte Rendu"
+        }
+    }
+}

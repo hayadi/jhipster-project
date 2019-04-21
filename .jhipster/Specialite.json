@@ -1,0 +1,30 @@
+{
+    "name": "Specialite",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "medecin",
+            "otherEntityRelationshipName": "specialite",
+            "relationshipName": "medecin"
+        }
+    ],
+    "changelogDate": "20190421142559",
+    "entityTableName": "specialite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

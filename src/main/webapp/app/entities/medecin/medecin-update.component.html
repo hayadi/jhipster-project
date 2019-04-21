@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-medecin-heading" jhiTranslate="projectJHipsterApp.medecin.home.createOrEditLabel">Create or edit a Medecin</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!medecin.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="medecin.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="medecin.nom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                        [(ngModel)]="medecin.adresse" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                        [(ngModel)]="medecin.telephone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                        [(ngModel)]="medecin.fax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="medecin.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.etat" for="field_etat">Etat</label>
+                    <select class="form-control" name="etat" [(ngModel)]="medecin.etat" id="field_etat" >
+                        <option value="ACTIF">{{'projectJHipsterApp.EtatMedecin.ACTIF' | translate}}</option>
+                        <option value="CONGE">{{'projectJHipsterApp.EtatMedecin.CONGE' | translate}}</option>
+                        <option value="INACTIF">{{'projectJHipsterApp.EtatMedecin.INACTIF' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.specialite" for="field_specialite">Specialite</label>
+                    <select class="form-control" id="field_specialite" name="specialite" [(ngModel)]="medecin.specialite" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="specialiteOption.id === medecin.specialite?.id ? medecin.specialite : specialiteOption" *ngFor="let specialiteOption of specialites; trackBy: trackSpecialiteById">{{specialiteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.medecin.clinique" for="field_clinique">Clinique</label>
+                    <select class="form-control" id="field_clinique" name="clinique" [(ngModel)]="medecin.clinique" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cliniqueOption.id === medecin.clinique?.id ? medecin.clinique : cliniqueOption" *ngFor="let cliniqueOption of cliniques; trackBy: trackCliniqueById">{{cliniqueOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

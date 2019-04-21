@@ -1,0 +1,69 @@
+{
+    "name": "Medecin",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "EtatMedecin",
+            "fieldValues": "ACTIF,CONGE,INACTIF"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "specialite",
+            "otherEntityRelationshipName": "medecin",
+            "relationshipName": "specialite",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "clinique",
+            "otherEntityRelationshipName": "medecin",
+            "relationshipName": "clinique",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "visite",
+            "otherEntityRelationshipName": "medecin",
+            "relationshipName": "visite"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "clinique",
+            "otherEntityRelationshipName": "medecin",
+            "relationshipName": "clinique",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190421142600",
+    "entityTableName": "medecin",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

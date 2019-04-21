@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Clinique.
+    -->
+    <changeSet id="20190421142558-1" author="jhipster">
+        <createTable tableName="clinique">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="dirigeant" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="adresse" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="telephone" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="fax" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="horaire_travail" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="clinique_medecin">
+            <column name="medecin_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="clinique_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="clinique_id, medecin_id" tableName="clinique_medecin"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

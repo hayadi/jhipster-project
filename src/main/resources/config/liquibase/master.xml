@@ -5,6 +5,17 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142558_added_entity_Clinique.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142559_added_entity_Specialite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142600_added_entity_Medecin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142601_added_entity_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142602_added_entity_Visite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142603_added_entity_CompteRendu.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190421142558_added_entity_constraints_Clinique.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142600_added_entity_constraints_Medecin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142601_added_entity_constraints_Patient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142602_added_entity_constraints_Visite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190421142603_added_entity_constraints_CompteRendu.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

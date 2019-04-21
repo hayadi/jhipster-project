@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="visite">
+            <h2><span jhiTranslate="projectJHipsterApp.visite.detail.title">Visite</span> {{visite.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projectJHipsterApp.visite.dateVisite">Date Visite</span></dt>
+                <dd>
+                    <span>{{visite.dateVisite}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.visite.medecin">Medecin</span></dt>
+                <dd>
+                    <div *ngIf="visite.medecin">
+                        <a [routerLink]="['/medecin', visite.medecin?.id, 'view']">{{visite.medecin?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.visite.clinique">Clinique</span></dt>
+                <dd>
+                    <div *ngIf="visite.clinique">
+                        <a [routerLink]="['/clinique', visite.clinique?.id, 'view']">{{visite.clinique?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/visite', visite.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

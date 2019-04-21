@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="clinique">
+            <h2><span jhiTranslate="projectJHipsterApp.clinique.detail.title">Clinique</span> {{clinique.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.nom">Nom</span></dt>
+                <dd>
+                    <span>{{clinique.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.dirigeant">Dirigeant</span></dt>
+                <dd>
+                    <span>{{clinique.dirigeant}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{clinique.adresse}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{clinique.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.fax">Fax</span></dt>
+                <dd>
+                    <span>{{clinique.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.email">Email</span></dt>
+                <dd>
+                    <span>{{clinique.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.horaireTravail">Horaire Travail</span></dt>
+                <dd>
+                    <span>{{clinique.horaireTravail}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.clinique.medecin">Medecin</span></dt>
+                <dd>
+                    <span *ngFor="let medecin of clinique.medecins; let last = last">
+                        <a [routerLink]="['/medecin', medecin?.id, 'view' ]">{{medecin.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/clinique', clinique.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

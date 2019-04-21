@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="compteRendu">
+            <h2><span jhiTranslate="projectJHipsterApp.compteRendu.detail.title">Compte Rendu</span> {{compteRendu.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projectJHipsterApp.compteRendu.dateCompteRendu">Date Compte Rendu</span></dt>
+                <dd>
+                    <span>{{compteRendu.dateCompteRendu}}</span>
+                </dd>
+                <dt><span jhiTranslate="projectJHipsterApp.compteRendu.visite">Visite</span></dt>
+                <dd>
+                    <div *ngIf="compteRendu.visite">
+                        <a [routerLink]="['/visite', compteRendu.visite?.id, 'view']">{{compteRendu.visite?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/compte-rendu', compteRendu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

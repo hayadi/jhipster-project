@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-clinique-heading" jhiTranslate="projectJHipsterApp.clinique.home.createOrEditLabel">Create or edit a Clinique</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!clinique.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="clinique.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="clinique.nom" required/>
+                    <div [hidden]="!(editForm.controls.nom?.dirty && editForm.controls.nom?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nom?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.dirigeant" for="field_dirigeant">Dirigeant</label>
+                    <input type="text" class="form-control" name="dirigeant" id="field_dirigeant"
+                        [(ngModel)]="clinique.dirigeant" required/>
+                    <div [hidden]="!(editForm.controls.dirigeant?.dirty && editForm.controls.dirigeant?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.dirigeant?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                        [(ngModel)]="clinique.adresse" required/>
+                    <div [hidden]="!(editForm.controls.adresse?.dirty && editForm.controls.adresse?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.adresse?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                        [(ngModel)]="clinique.telephone" required/>
+                    <div [hidden]="!(editForm.controls.telephone?.dirty && editForm.controls.telephone?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.telephone?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                        [(ngModel)]="clinique.fax" required/>
+                    <div [hidden]="!(editForm.controls.fax?.dirty && editForm.controls.fax?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fax?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="clinique.email" required/>
+                    <div [hidden]="!(editForm.controls.email?.dirty && editForm.controls.email?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.email?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projectJHipsterApp.clinique.horaireTravail" for="field_horaireTravail">Horaire Travail</label>
+                    <input type="text" class="form-control" name="horaireTravail" id="field_horaireTravail"
+                        [(ngModel)]="clinique.horaireTravail" required/>
+                    <div [hidden]="!(editForm.controls.horaireTravail?.dirty && editForm.controls.horaireTravail?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.horaireTravail?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="projectJHipsterApp.clinique.medecin" for="field_medecin">Medecin</label>
+                    <select class="form-control" id="field_medecin" multiple name="medecin" [(ngModel)]="clinique.medecins">
+                        <option [ngValue]="getSelected(clinique.medecins, medecinOption)" *ngFor="let medecinOption of medecins; trackBy: trackMedecinById">{{medecinOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

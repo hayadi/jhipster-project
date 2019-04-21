@@ -38,6 +38,18 @@ public class CacheConfiguration {
             cm.createCache(dz.elit.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(dz.elit.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(dz.elit.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Clinique.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Clinique.class.getName() + ".medecins", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Clinique.class.getName() + ".patients", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Clinique.class.getName() + ".visites", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Specialite.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Specialite.class.getName() + ".medecins", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Medecin.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Medecin.class.getName() + ".visites", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Medecin.class.getName() + ".cliniques", jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Patient.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.Visite.class.getName(), jcacheConfiguration);
+            cm.createCache(dz.elit.jhipster.application.domain.CompteRendu.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

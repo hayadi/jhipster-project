@@ -1,0 +1,31 @@
+{
+    "projectJHipsterApp": {
+        "clinique": {
+            "home": {
+                "title": "Cliniques",
+                "createLabel": "Create a new Clinique",
+                "createOrEditLabel": "Create or edit a Clinique"
+            },
+            "created": "A new Clinique is created with identifier {{ param }}",
+            "updated": "A Clinique is updated with identifier {{ param }}",
+            "deleted": "A Clinique is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Clinique {{ id }}?"
+            },
+            "detail": {
+                "title": "Clinique"
+            },
+            "nom": "Nom",
+            "dirigeant": "Dirigeant",
+            "adresse": "Adresse",
+            "telephone": "Telephone",
+            "fax": "Fax",
+            "email": "Email",
+            "horaireTravail": "Horaire Travail",
+            "medecin": "Medecin",
+            "medecin": "Medecin",
+            "patient": "Patient",
+            "visite": "Visite"
+        }
+    }
+}
