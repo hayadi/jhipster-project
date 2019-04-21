@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "ProjectJHipster",
+    "packageName": "dz.elit.jhipster.application",
+    "packageFolder": "dz/elit/jhipster/application",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.2",
+    "jwtSecretKey": "Yjg0Y2MzNmVlODFmMWExNmQxOTc0ODIxMjczZGEzYWVlMGM5MTI3Yjc2NTA5N2VmMjc5ZDlhOGRiOTQ0NzhiYjA4MmFjMTAzOWIxZWRhMTViYTFhNmMzZGJjNjJhNTk2ZGFhNzU5MTA0NmJkODg1ZTkwN2YwOTQxODE4YzJiMWY=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "hayadi",
+  "repository-name": "jhipster-project"
+}
