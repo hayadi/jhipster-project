@@ -1,0 +1,44 @@
+{
+    "name": "Visite",
+    "fields": [
+        {
+            "fieldName": "dateVisite",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "medecin",
+            "otherEntityRelationshipName": "visite",
+            "relationshipName": "medecin",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "clinique",
+            "otherEntityRelationshipName": "visite",
+            "relationshipName": "clinique",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "compteRendu",
+            "otherEntityRelationshipName": "visite",
+            "relationshipName": "compteRendu",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190421142602",
+    "entityTableName": "visite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

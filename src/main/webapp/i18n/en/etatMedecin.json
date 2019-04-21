@@ -1,0 +1,10 @@
+{
+    "projectJHipsterApp": {
+        "EtatMedecin": {
+            "null": "",
+            "ACTIF": "ACTIF",
+            "CONGE": "CONGE",
+            "INACTIF": "INACTIF"
+        }
+    }
+}
