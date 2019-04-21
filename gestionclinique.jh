@@ -1,0 +1,62 @@
+enum EtatMedecin{
+ACTIF,
+CONGE,
+INACTIF
+}
+
+entity Clinique{
+nom String required,
+dirigeant String required, 
+adresse String required,
+telephone String required,
+fax String required,
+email String required,
+horaireTravail  String required
+}
+
+entity Specialite{
+nom String,
+description String
+}
+
+entity Medecin{
+nom String,
+adresse String,
+telephone String,
+fax String,
+email String,
+etat EtatMedecin
+}
+
+entity Patient{
+nom String,
+adresse String,
+telephone String,
+fax String,
+email String
+}
+
+entity Visite{
+dateVisite LocalDate required
+}
+
+entity CompteRendu{
+dateCompteRendu LocalDate required
+}
+
+// defining multiple oneToOne relationships
+relationship ManyToMany {
+	Clinique{medecin} to Medecin{clinique}    
+}
+
+relationship OneToOne {
+	CompteRendu to Visite
+}
+
+relationship ManyToOne {
+	Medecin to Specialite,
+    Medecin to Clinique,
+    Patient to Clinique,
+    Visite to Medecin,
+    Visite to Clinique
+}
